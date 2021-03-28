@@ -1,3 +1,6 @@
+import boto3
+import click
+
 @click.command()
 @click.option("--cluster", help="Name of the ECS cluster", required=True)
 @click.option("--service", help="Name of the ECS service", required=True)
