@@ -1,4 +1,4 @@
-# lori_assignment
+# Books Assignment
 
 ## Description
 
@@ -8,9 +8,8 @@ This is a django application for managing renting of books:
 * rent a book
 * view balance
 
-The application can be accesed at https://loriassignment.herokuapp.com/
-The documentation can be viewed at https://loriassignment.herokuapp.com/swagger
-
+The application can be accesed at http://production-alb-1947308164.us-east-1.elb.amazonaws.com
+The documentation can be viewed at http://production-alb-1947308164.us-east-1.elb.amazonaws.com/swagger
 
 ## Requirements
 * Python 3.6
@@ -19,8 +18,8 @@ The documentation can be viewed at https://loriassignment.herokuapp.com/swagger
 * virtualenv
 
 # Installation
-### 1)Clone the repo from GitHub:
-$ git clone https://github.com/Ahmedsebit/lori_assignment.git
+### 1) Clone the repo from GitHub:
+$ git clone https://github.com/Burugux/django-books.git
 
 ### 2) Create a virtual environment and install the necessary packages with:
 $ virtualenv -p python3 env
@@ -29,7 +28,7 @@ $ virtualenv -p python3 env
 $ source env/bin/activate
 
 ### 4) cd to the root of the api:
-$ cd lori_assignment
+$ cd django_books
 
 ### 5) Install requirements:
 $ pip install -r requirements.txt
@@ -69,3 +68,6 @@ $ python manage.py createsuperusers
 
 # Running the tests
  $ python manage.py test --with-coverage
+
+# Github Actions
+Github actions have been configured to build a docker image,upload it to ECR and then runs a python commandline tool to update an existinng ECS cluster created by [terraform](https://github.com/Burugux/books-terraform)
